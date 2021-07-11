@@ -8,16 +8,11 @@ from django.contrib.auth import login, authenticate
 from django.template.context_processors import csrf
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
-from .email import send_welcome_email
-
 
 
 # Create your views here.
-@login_required(login_url='/accounts/login/')
-def index(request):
-    images = Image.images()
-    users = User.objects.exclude(id=request.user.id)
-    return render(request,'index.html', {"images":images[::1],"users":users})
+def home(request):
+    return render(request, 'home.html')
 
 def post(request):
     if request.method == 'POST':
