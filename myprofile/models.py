@@ -26,6 +26,15 @@ class Profile(models.Model):
         profiles = cls.objects.all()
         return profiles
 
+    def photo_url(self):
+        if self.photo and hasattr(self.photo, 'url'):
+            return self.photo.url
+
+    def save_profile(self):
+        self.user
+
+    def __str__(self):
+        return self.name
 
 
 
