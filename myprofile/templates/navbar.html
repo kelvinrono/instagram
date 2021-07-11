@@ -14,7 +14,7 @@
     <nav class="navbar navbar-inverse">
         <div class="container-fluid">
             <div class="navbar-header">
-                <a class="navbar-brand" href="#">The Moringa Tribune</a>
+                <a class="navbar-brand" href="#">Instagram</a>
             </div>
             <div class="col-sm-6 col-md-6">
               {% if user.is_authenticated %}
@@ -27,9 +27,7 @@
                     <li>
                       <a href="#">Home</a>
                     </li>
-                    <li>
-                      <a href="#">Create Article</a>
-                    </li>
+                  
                     <li>
                       <a href="/accounts/password/change">Change Password</a>
                     </li>
@@ -41,7 +39,7 @@
               </ul>
               {% else %}
               <li>
-                <a class='btn btn-default' href="/accounts/login">Login</a>
+                <a class='btn btn-default' href="/accounts/login/">Login</a>
               </li>
       
               {% endif %}
