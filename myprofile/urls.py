@@ -5,7 +5,7 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns=[
-    url('^$',views.home,name='home'),
+    url('',views.index,name = 'index'),
     url(r'accounts/', include('django.contrib.auth.urls')),
     url(r'^accounts/', include('registration.backends.simple.urls')),
     url('profile/<str:username>/',views.profile,name='profile'),
