@@ -10,9 +10,14 @@ from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
 
 
+
+
 # Create your views here.
-def home(request):
-    return render(request, 'home.html')
+@login_required(login_url='/accounts/login/')
+def index(request):
+    images = Image.images()
+    users = User.objects.exclude(id=request.user.id)
+    return render(request,'index.html', {"images":images[::1],"users":users})
 
 def post(request):
     if request.method == 'POST':
