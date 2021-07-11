@@ -36,6 +36,9 @@ class Profile(models.Model):
     def __str__(self):
         return self.name
 
+    @classmethod
+    def search_profile(cls, name):
+        return cls.objects.filter(user__username__icontains=name).all()
 
 
 
