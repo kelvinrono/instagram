@@ -3,7 +3,7 @@ import os
 from decouple import config,Csv
 import django_heroku
 import dj_database_url
-
+import cloudinary
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -146,5 +146,11 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 LOGOUT_REDIRECT_URL = '/'
 LOGIN_REDIRECT_URL = '/' 
+
+cloudinary.config( 
+cloud_name = "deewwutzw", 
+api_key = "412374378869692", 
+api_secret = 'azBC6f5BPkMJRRDqU7RzTlcAFF0' 
+) 
 
 django_heroku.settings(locals())
